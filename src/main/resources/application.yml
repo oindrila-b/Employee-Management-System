@@ -1,0 +1,35 @@
+# Configuring the mysql database with spring boot properties
+
+# Decides on how the db with behave when the server is run, in this case the object model is compared
+# with the existing schema and hibernate updates the schema according to the difference
+
+
+spring:
+  datasource:
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/employee_management_system
+    username: dev
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+server:
+  port: 3003
+
+# A DataSource is a factory for connections to the physical databases.
+# A datasource uses a URL along with username/password credentials to establish the database connection.
+
+#spring.datasource.url=jdbc:mysql://localhost:3306/employee_records
+#spring.datasource.username=dev
+#spring.datasource.password=root
+
+# Dialect is a class and a bridge between Java JDBC types and SQL types,
+# which contains mapping between java language data type and database datatype.
+# Hibernate generates queries for the specific database based on the Dialect class.
+
+#spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.MySQL5InnoDBDialect
+
+#this jdbc driver for mysql is a dependency for MySQL JDBC driver,
+# which enables Java application to communicate with MySQL server.
+
+#spring.datasource.driver-class-name =com.mysql.jdbc.Driver
