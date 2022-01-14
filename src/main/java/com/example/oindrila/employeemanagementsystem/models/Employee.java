@@ -1,4 +1,4 @@
-package com.example.oindrila.employeemanagementsystem.models.responses;
+package com.example.oindrila.employeemanagementsystem.models;
 
 import com.example.oindrila.employeemanagementsystem.enums.Department;
 import com.example.oindrila.employeemanagementsystem.enums.Gender;
@@ -8,14 +8,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class EmployeeCreatedResponse {
+public class Employee extends AbstractModel {
 
-    private Long id;
     private String firstName;
     private String lastName;
     private BigDecimal salary;
@@ -24,6 +24,5 @@ public class EmployeeCreatedResponse {
     private String position;
     private String email;
     private String phone;
-
-
+    private PhotoInfo photoInfo;
 }

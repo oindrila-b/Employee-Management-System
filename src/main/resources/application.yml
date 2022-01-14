@@ -3,7 +3,6 @@
 # Decides on how the db with behave when the server is run, in this case the object model is compared
 # with the existing schema and hibernate updates the schema according to the difference
 
-
 spring:
   datasource:
     url: jdbc:mysql://${MYSQL_HOST:localhost}:3306/employee_management_system
@@ -15,6 +14,12 @@ spring:
     show-sql: true
 server:
   port: 3003
+file:
+  resource-upload-temp-location: ${user.home}/.employeemanagementsystem/resources/uploads/.temp/
+firebase:
+  bucket-name: employeemanagementsystem-ad8ed.appspot.com
+  token-location: ${user.home}/.credentials/employee-management-system/firebase.json
+  image-url-expiry: 60
 
 # A DataSource is a factory for connections to the physical databases.
 # A datasource uses a URL along with username/password credentials to establish the database connection.

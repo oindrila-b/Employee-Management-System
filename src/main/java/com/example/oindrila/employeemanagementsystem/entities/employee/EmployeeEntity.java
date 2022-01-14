@@ -1,5 +1,7 @@
 package com.example.oindrila.employeemanagementsystem.entities.employee;
 
+import com.example.oindrila.employeemanagementsystem.entities.AbstractEntity;
+import com.example.oindrila.employeemanagementsystem.entities.PhotoInfoEntity;
 import com.example.oindrila.employeemanagementsystem.enums.Department;
 import com.example.oindrila.employeemanagementsystem.enums.Gender;
 import lombok.Data;
@@ -42,6 +44,6 @@ public class EmployeeEntity extends AbstractEntity {
     @Column(name = "phone", columnDefinition = "VARCHAR(20)", unique = true)
     private String phone;
 
-
-
+    @OneToOne(mappedBy = "employeeEntity", cascade = CascadeType.ALL,  orphanRemoval = true)
+    private PhotoInfoEntity photoInfo;
 }

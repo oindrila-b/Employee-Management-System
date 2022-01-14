@@ -1,4 +1,4 @@
-package com.example.oindrila.employeemanagementsystem.entities.employee;
+package com.example.oindrila.employeemanagementsystem.entities;
 
 import lombok.Data;
 
